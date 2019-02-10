@@ -6,7 +6,7 @@ Additionally, this package offers a bunch of methods you can use to animate thos
 
 At the core of this package is a .ttf file parser, written in pure Dart. You can, if you want to, use it to read the font tables present in your TrueType font file.
 
-![](https://raw.githubusercontent.com/hathibelagal-dev/text-to-path-maker-for-flutter/master/example.gif | width=400)
+![](https://raw.githubusercontent.com/hathibelagal-dev/text-to-path-maker-for-flutter/master/example.gif)
 
 ## Getting started
 
