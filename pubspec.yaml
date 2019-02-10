@@ -1,0 +1,18 @@
+name: text_to_path_maker
+description: A Flutter package that can convert any font's characters into paths and animate them.
+version: 0.5.5
+author: Ashraff Hathibelagal <hathi@progur.com>
+homepage: https://github.com/hathibelagal-dev/text-to-path-maker-for-flutter
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
