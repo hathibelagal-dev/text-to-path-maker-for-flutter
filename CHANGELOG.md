@@ -6,6 +6,10 @@
 
 * Removed unnecessary code and assets.
 
-## [0.5.5] - 11th February 2019
+## [0.5.6] - 11th February 2019
 
 * Improved health checks.
+
+## [0.5.7] - 11th February 2019
+
+* More efficient path generation now.

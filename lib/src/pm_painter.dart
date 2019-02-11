@@ -5,6 +5,8 @@ import 'package:flutter/rendering.dart';
 * Copyright Ashraff Hathibelagal 2019
 */
 
+/// A [CustomPainter] subclass that can be used to quickly render a character
+/// and animate it.
 class PMPainter extends CustomPainter {
   Path path;
   Paint _paint;
