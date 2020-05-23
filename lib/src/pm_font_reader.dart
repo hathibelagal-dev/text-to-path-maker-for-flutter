@@ -21,7 +21,7 @@ class PMFontReader {
   /// It expects you to pass the path of the .ttf file as its only argument.
   Future<PMFont> parseTTF(path) {
     return File(path).readAsBytes().then((data) {
-      fontData = ByteData.view((data as Uint8List).buffer);
+      fontData = ByteData.view(data.buffer);
       return _parseTTF();
     });
   }

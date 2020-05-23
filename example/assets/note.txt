@@ -1,1 +1,0 @@
-Add your own .ttf files to this directory.

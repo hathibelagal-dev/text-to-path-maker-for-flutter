@@ -1,5 +1,5 @@
-name: icon_animation
-description: A new Flutter application.
+name: example
+description: A new Flutter project.
 
 version: 1.0.0+1
 
@@ -9,9 +9,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  text_to_path_maker: ^0.5.1
+    
+  text_to_path_maker:
+    path: ../
+
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
 
 flutter:
   uses-material-design: true
   assets:
     - assets/
+  
+

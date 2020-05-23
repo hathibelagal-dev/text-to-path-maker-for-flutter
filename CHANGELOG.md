@@ -1,3 +1,7 @@
+## [0.5.9] - 23rd May 2020
+
+Improved example code.
+
 ## [0.5.0] - 11th February 2019
 
 * Initial release.
