@@ -83,11 +83,12 @@ class PMFontReader {
   /// method reads all the four characters and concatenates them into
   /// a string.
   String _getTag(ByteData fontData, int offset) {
-    var charCodes = List<int>();
+    var charCodes = <int>[];
     charCodes.add(fontData.getUint8(offset));
     charCodes.add(fontData.getUint8(offset + 1));
     charCodes.add(fontData.getUint8(offset + 2));
     charCodes.add(fontData.getUint8(offset + 3));
+
     return String.fromCharCodes(charCodes);
   }
 
@@ -112,7 +113,13 @@ class PMFontReader {
       }
 
       var glyphData = {};
-      data['glyphs'].add(glyphData);
+      if (data['glyphs'] == null) {
+        // TODO: SET COULD EXCEPTION
+        throw Exception("Thrown error: data['glyphs'] was null");
+      }
+
+      data['glyphs']?.add(glyphData);
+
       glyphData['id'] = i;
       glyphData['nContours'] = fontData.getInt16(glyphOffset);
       glyphOffset += 2;
@@ -254,6 +261,7 @@ class PMFontReader {
     int cmapOffset = font.tables['cmap'].offset;
     var data = {};
     font.tables['cmap'].data = data;
+
     data['version'] = fontData.getUint16(cmapOffset);
     var glyphIdToCharacterCodes = {};
     data['characterMap'] = glyphIdToCharacterCodes;

@@ -18,7 +18,8 @@ class PMPainter extends CustomPainter {
   Paint indicator;
   double radius;
 
-  PMPainter(this.path, {this.indicatorPosition, this.radius, this.indicator}) {
+  PMPainter(this.path, this.indicatorPosition, this.radius, this.indicator,
+      this.posX, this.posY, this.scaleX, this._paint, this.scaleY) {
     init();
   }
 
