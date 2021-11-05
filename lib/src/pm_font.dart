@@ -1,6 +1,6 @@
 import 'pm_contour_point.dart';
 import 'dart:ui';
-import 'package:layouts/layouts.dart';
+
 /**
 * Text to Path Maker
 * Copyright Ashraff Hathibelagal 2019
