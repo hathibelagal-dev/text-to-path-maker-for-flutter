@@ -4,10 +4,12 @@ import 'package:text_to_path_maker/text_to_path_maker.dart';
 import 'dart:typed_data';
 
 void main() {
-  runApp(Home());
+  runApp(const Home());
 }
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return _Home();
@@ -35,7 +37,7 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
 
     indicator = Paint();
     indicator.style = PaintingStyle.fill;
-    indicator.color = Color.fromRGBO(255, 0, 0, 1.0);
+    indicator.color = const Color.fromRGBO(255, 0, 0, 1.0);
 
     rootBundle.load("assets/font2.ttf").then((ByteData data) {
       // Create a font reader
@@ -55,8 +57,8 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
       path1Pieces = PMPieces.breakIntoPieces(myPath1, 0.01);
 
       // Create an animation controller as usual
-      controller =
-          AnimationController(vsync: this, duration: new Duration(seconds: 2));         
+      controller = AnimationController(
+          vsync: this, duration: const Duration(seconds: 2));
 
       // Create a tween to move through all the path pieces.
       animation = IntTween(begin: 0, end: path1Pieces.paths.length - 1)
@@ -79,23 +81,24 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
     return MaterialApp(
         home: Scaffold(
       body: Container(
+          padding: const EdgeInsets.all(16),
           child: Column(children: [
             Row(children: [
               ElevatedButton(
-                  child: Text("Forward"),
                   onPressed: ready
                       ? () {
                           controller.forward();
                         }
-                      : null),
-              Spacer(),
+                      : null,
+                  child: const Text("Forward")),
+              const Spacer(),
               ElevatedButton(
-                  child: Text("Reverse"),
                   onPressed: ready
                       ? () {
                           controller.reverse();
                         }
-                      : null),
+                      : null,
+                  child: const Text("Reverse")),
             ]),
             ready
                 ? CustomPaint(
@@ -103,10 +106,9 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                         indicatorPosition: path1Pieces.points[z],
                         radius: 5.0,
                         indicator: indicator))
-                : Text("Loading")
-          ]),
-          padding: EdgeInsets.all(16)),
-      appBar: AppBar(title: Text("Example")),
+                : const Text("Loading")
+          ])),
+      appBar: AppBar(title: const Text("Example")),
     ));
   }
 }

@@ -1,4 +1,4 @@
-## [0.7.0] - 20th May 2023
+## [0.6.0] - 20th May 2023
 
 Null safety, Dart 3 support
 
