@@ -24,4 +24,4 @@ Refer to the example code to learn more.
 
 ## Notes
 
-This package is still a work in progress. It works reasonably well with most fonts, but there's no guarantee that it will handle every single font you have. It has been tested with Roboto, FontAwesome, and Material Icons. If you find a bug, you can raise it on this project's GitHub repository.
+This package is still a work in progress. It works reasonably well with most fonts, but there's no guarantee that it will handle every single font you have. It has been tested with Roboto, FontAwesome, and Material Icons. If you find a bug, you can raise an issue on this project's GitHub repository.
