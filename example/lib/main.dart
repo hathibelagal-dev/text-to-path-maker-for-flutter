@@ -15,21 +15,27 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<Home> with SingleTickerProviderStateMixin {
-  PMFont myFont;
-  Path myPath1;
-  Path myPath2;
+  late PMFont myFont;
+  late Path myPath1;
+  late Path myPath2;
 
-  PMPieces path1Pieces;
+  late PMPieces path1Pieces;
 
-  Animation<int> animation;
-  AnimationController controller;
+  late Animation<int> animation;
+  late AnimationController controller;
 
   var z = 0;
   var ready = false;
 
+  late Paint indicator;
+
   @override
   void initState() {
     super.initState();
+
+    indicator = Paint();
+    indicator.style = PaintingStyle.fill;
+    indicator.color = Color.fromRGBO(255, 0, 0, 1.0);
 
     rootBundle.load("assets/font2.ttf").then((ByteData data) {
       // Create a font reader
@@ -50,7 +56,7 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
 
       // Create an animation controller as usual
       controller =
-          AnimationController(vsync: this, duration: new Duration(seconds: 2));
+          AnimationController(vsync: this, duration: new Duration(seconds: 2));         
 
       // Create a tween to move through all the path pieces.
       animation = IntTween(begin: 0, end: path1Pieces.paths.length - 1)
@@ -75,7 +81,7 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
       body: Container(
           child: Column(children: [
             Row(children: [
-              RaisedButton(
+              ElevatedButton(
                   child: Text("Forward"),
                   onPressed: ready
                       ? () {
@@ -83,7 +89,7 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                         }
                       : null),
               Spacer(),
-              RaisedButton(
+              ElevatedButton(
                   child: Text("Reverse"),
                   onPressed: ready
                       ? () {
@@ -94,7 +100,9 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
             ready
                 ? CustomPaint(
                     painter: PMPainter(path1Pieces.paths[z],
-                        indicatorPosition: path1Pieces.points[z]))
+                        indicatorPosition: path1Pieces.points[z],
+                        radius: 5.0,
+                        indicator: indicator))
                 : Text("Loading")
           ]),
           padding: EdgeInsets.all(16)),

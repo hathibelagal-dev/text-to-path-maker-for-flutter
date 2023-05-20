@@ -83,7 +83,7 @@ class PMFontReader {
   /// method reads all the four characters and concatenates them into
   /// a string.
   String _getTag(ByteData fontData, int offset) {
-    var charCodes = List<int>();
+    List<int> charCodes = List.empty(growable: true);
     charCodes.add(fontData.getUint8(offset));
     charCodes.add(fontData.getUint8(offset + 1));
     charCodes.add(fontData.getUint8(offset + 2));
@@ -112,7 +112,7 @@ class PMFontReader {
       }
 
       var glyphData = {};
-      data['glyphs'].add(glyphData);
+      data['glyphs']?.add(glyphData);
       glyphData['id'] = i;
       glyphData['nContours'] = fontData.getInt16(glyphOffset);
       glyphOffset += 2;

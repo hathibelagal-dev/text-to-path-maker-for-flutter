@@ -1,3 +1,7 @@
+## [0.7.0] - 20th May 2023
+
+Null safety, Dart 3 support
+
 ## [0.5.9] - 23rd May 2020
 
 Improved example code.

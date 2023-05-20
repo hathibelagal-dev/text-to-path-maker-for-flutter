@@ -9,30 +9,27 @@ import 'package:flutter/rendering.dart';
 /// and animate it.
 class PMPainter extends CustomPainter {
   Path path;
-  Paint _paint;
-  double posX;
-  double posY;
-  double scaleX;
-  double scaleY;
+  late Paint _paint;
+  late double posX;
+  late double posY;
+  late double scaleX;
+  late double scaleY;
   Offset indicatorPosition;
   Paint indicator;
   double radius;
 
-  PMPainter(this.path, {this.indicatorPosition, this.radius, this.indicator}) {
+  PMPainter(this.path,
+      {required this.indicatorPosition,
+      required this.radius,
+      required this.indicator}) {
     init();
   }
 
   void init() {
-    if (this.path == null) this.path = Path();
     _paint = Paint();
     _paint.strokeWidth = 3;
     _paint.color = Color.fromRGBO(0, 0, 0, 1.0);
     _paint.style = PaintingStyle.stroke;
-
-    radius = 5.0;
-    indicator = Paint();
-    indicator.style = PaintingStyle.fill;
-    indicator.color = Color.fromRGBO(255, 0, 0, 1.0);
   }
 
   void setPaint(Paint p) {
@@ -41,11 +38,8 @@ class PMPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawPath(path, _paint);
-
-    if (this.indicatorPosition != null) {
-      canvas.drawCircle(indicatorPosition, radius, indicator);
-    }
+    canvas.drawPath(path, _paint);    
+    canvas.drawCircle(indicatorPosition, radius, indicator);
   }
 
   @override

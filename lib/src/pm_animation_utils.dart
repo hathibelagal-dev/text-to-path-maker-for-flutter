@@ -35,7 +35,7 @@ class PMPieces {
                 metric.length * (i - precision), metric.length * i),
             Offset.zero);
         paths.add(Path()..addPath(cPath, Offset.zero));
-        points.add(metric.getTangentForOffset(metric.length * i).position);
+        points.add(metric.getTangentForOffset(metric.length * i)?.position);
       }
     });
     return PMPieces(paths, points);
